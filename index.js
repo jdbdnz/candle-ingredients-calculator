@@ -1,26 +1,31 @@
 $(function(){
+  function clearIngredients(){
+    $('#ingredients_list').html('');
+  }
+
   function setTitle(quantity8oz, quantity16oz) {
     var title = '';
     if(quantity8oz + quantity16oz == 0) {
       title += 'No ingredients are required to make no candles';
+      clearIngredients();
     } else {
-        title += 'To create ';
+      title += 'To create ';
 
-        if(quantity8oz > 0) {
-          title += quantity8oz+' x 8oz candles';
-
-          if(quantity16oz > 0) {
-            title += ' and ';
-          }
-        }
+      if(quantity8oz > 0) {
+        title += quantity8oz+' x 8oz candles';
 
         if(quantity16oz > 0) {
-          title += quantity16oz+' x 16oz candles';
+          title += ' and ';
         }
+      }
 
-        title += ' you will need the follow ingredients...';
+      if(quantity16oz > 0) {
+        title += quantity16oz+' x 16oz candles';
+      }
+
+      title += ' you will need the follow ingredients...';
+      displayIngredients(quantity8oz, quantity16oz);
     }
-
     $('#title').text(title);
   };
 
@@ -64,7 +69,6 @@ $(function(){
     var quantity8oz = $('#quantity_8oz').val();
     var quantity16oz = $('#quantity_16oz').val();
     setTitle(quantity8oz, quantity16oz);
-    displayIngredients(quantity8oz, quantity16oz);
   });
 
 
