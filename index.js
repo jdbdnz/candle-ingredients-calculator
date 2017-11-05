@@ -66,4 +66,11 @@ $(function(){
     setTitle(quantity8oz, quantity16oz);
     displayIngredients(quantity8oz, quantity16oz);
   });
+
+
+  $('body').css('padding-top', $('.navbar').height());
+
+  $('form').submit(function(e){
+    e.preventDefault();
+  });
 });
