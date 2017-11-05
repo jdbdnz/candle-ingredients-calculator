@@ -69,8 +69,4 @@ $(function(){
 
 
   $('body').css('padding-top', $('.navbar').height());
-
-  $('form').submit(function(e){
-    e.preventDefault();
-  });
 });
