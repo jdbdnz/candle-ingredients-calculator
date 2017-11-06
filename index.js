@@ -66,8 +66,8 @@ $(function(){
   }
 
   $('#calculate_ingredients').click(function() {
-    var quantity8oz = $('#quantity_8oz').val();
-    var quantity16oz = $('#quantity_16oz').val();
+    var quantity8oz = parseInt($('#quantity_8oz').val() || 0);
+    var quantity16oz = parseInt($('#quantity_16oz').val() || 0);
     setTitle(quantity8oz, quantity16oz);
   });
 
